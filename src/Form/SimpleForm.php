@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\fapi_example\Form;
+namespace Drupal\simpleForm\Form;
 
 
 use Drupal\Core\Form\FormBase;
@@ -66,7 +66,7 @@ class SimpleForm extends FormBase {
    *   The unique ID of the form defined by this class.
    */
   public function getFormId() {
-    return 'fapi_example_simple_form';
+    return 'simpleForm_simple_form';
   }
 
   /**
