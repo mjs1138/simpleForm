@@ -1,7 +1,7 @@
 name: mjs1138 Form API Example
 type: module
 description: Demonstrates the Drupal Form API.
-package: msj1138 modules
+package: mjs1138 modules
 # core: 8.x
 configure: simpleForm.description
 dependencies:
