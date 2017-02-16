@@ -1,7 +1,7 @@
-name: mjs1138 Form API Example
+name: simp Form API Example
 type: module
-description: Demonstrates the Drupal Form API.
-package: mjs1138 modules
+description: Boogie
+package: mjs modules
 # core: 8.x
 configure: simpleForm.description
 dependencies:
