@@ -68,6 +68,8 @@ class SimpleForm extends FormBase {
   public function getFormId() {
     return 'simpleForm_simple_form';
   }
+
+  
   /**
    * Implements form validation.
    *
