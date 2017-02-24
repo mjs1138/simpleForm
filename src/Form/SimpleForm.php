@@ -112,10 +112,7 @@ class SimpleForm extends FormBase
          */
         $title = $form_state->getValue('title');
 
- //       $form_state['redirect'] = 'mjs1138/simpleForm/simple-form';
- //       $form_state['redirect'] = new Url('mjs1138/simpleForm/simple-form');
- //       $form_state->setRedirectUrl('http://localhost/drupal-8.2.6/mjs1138/simpleForm/simple-form');
-        $url = Url::fromRoute('simpleForm.description');
+        $url = Url::fromRoute('simpleForm.description'); // generate a url for route
         $form_state->setRedirectUrl($url);
 
         drupal_set_message(t('You specified a title of %title.', ['%title' => $title]));
