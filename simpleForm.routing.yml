@@ -25,3 +25,11 @@ simpleForm.simple_form:
     _title: 'mjs1138 Simple Form API Example'
   requirements:
     _permission: 'access content'
+
+
+simpleForm.basicPageRedirect:
+  path: 'A Basic Page'
+  defaults:
+    _title: 'Basic Page Title'
+  requirements:
+    _permission: 'access content'

@@ -5,7 +5,7 @@ namespace Drupal\simpleForm\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Url; //????
+use Drupal\Core\Url;
 
 /**
  * Implements the SimpleForm form controller.
@@ -34,11 +34,44 @@ class SimpleForm extends FormBase
      */
     public function buildForm(array $form, FormStateInterface $form_state)
     {
+        $form['#tree'] = TRUE;
 
-        $form['title'] = [
+        $form['User'] = [
+            '#type' => 'fieldset',
+            '#title' => $this->t('User'),
+        ];
+
+        $form['User']['FirstName'] = [
             '#type' => 'textfield',
-            '#title' => $this->t('Title'),
-            '#description' => $this->t('Title must be at least 5 characters in length.'),
+            '#title' => $this->t('First Name'),
+            '#description' => $this->t(''),
+            '#required' => TRUE,
+        ];
+
+        $form['User']['LastName'] = [
+            '#type' => 'textfield',
+            '#title' => $this->t('Last Name'),
+            '#description' => $this->t(''),
+            '#required' => TRUE,
+        ];
+
+
+        $form['PI'] = [
+            '#type' => 'fieldset',
+            '#title' => $this->t('PI'),
+        ];
+
+        $form['PI']['FirstName'] = [
+            '#type' => 'textfield',
+            '#title' => $this->t('First Name'),
+            '#description' => $this->t(''),
+            '#required' => TRUE,
+        ];
+
+        $form['PI']['LastName'] = [
+            '#type' => 'textfield',
+            '#title' => $this->t('Last Name'),
+            '#description' => $this->t(''),
             '#required' => TRUE,
         ];
 
@@ -88,7 +121,7 @@ class SimpleForm extends FormBase
     public function validateForm(array &$form, FormStateInterface $form_state)
     {
         $title = $form_state->getValue('title');
-        if (strlen($title) < 5) {
+        if (strlen($title) < 0) {
             // Set an error for the form element with a key of "title".
             $form_state->setErrorByName('title', $this->t('The title must be at least 5 characters long.'));
         }
@@ -111,11 +144,16 @@ class SimpleForm extends FormBase
          * with the title.
          */
         $title = $form_state->getValue('title');
+        $values = $form_state->getValue();
 
-        $url = Url::fromRoute('simpleForm.description'); // generate a url for route
-        $form_state->setRedirectUrl($url);
+//       $url = Url::fromRoute('simpleForm.description'); // generate a url for route
+        ksm($form_state); //????
+        $url = Url::fromRoute('simpleForm.basicPageRedirect'); // generate a url for route
+//????        $form_state->setRedirectUrl($url);
 
-        drupal_set_message(t('You specified a title of %title.', ['%title' => $title]));
+
+
+//        drupal_set_message(t('You specified a title of %title.', ['%title' => $title]));
     }
 
 }
