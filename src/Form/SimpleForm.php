@@ -146,14 +146,13 @@ class SimpleForm extends FormBase
         $title = $form_state->getValue('title');
         $values = $form_state->getValue();
 
-//       $url = Url::fromRoute('simpleForm.description'); // generate a url for route
         ksm($form_state); //????
-        $url = Url::fromRoute('simpleForm.basicPageRedirect'); // generate a url for route
-//????        $form_state->setRedirectUrl($url);
+        $_SESSION['mjs'] = $form_state;
+//       $url = Url::fromRoute('simpleForm.description'); // generate a url for route
+//        $url = Url::fromRoute('simpleForm.basicPageRedirect'); // generate a url for route
+        $url = Url::fromRoute('simpleForm.description'); // generate a url for route
 
-
-
-//        drupal_set_message(t('You specified a title of %title.', ['%title' => $title]));
+        $form_state->setRedirectUrl($url);
     }
 
 }

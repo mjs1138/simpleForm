@@ -13,7 +13,7 @@
 simpleForm.description:
   path: 'mjs1138/simpleForm'
   defaults:
-    _controller:  '\Drupal\simpleForm\Controller\Page::description'
+    _controller:  '\Drupal\simpleForm\Controller\Page::description' # points to class::method to call
     _title: 'mjs1138 Form API Example'
   requirements:
     _permission: 'access content'
@@ -30,6 +30,6 @@ simpleForm.simple_form:
 simpleForm.basicPageRedirect:
   path: 'A Basic Page'
   defaults:
-    _title: 'Basic Page Title'
+    _title: 'Basic Page Title From ReDirect'
   requirements:
     _permission: 'access content'
