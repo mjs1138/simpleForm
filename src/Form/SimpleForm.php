@@ -150,7 +150,7 @@ class SimpleForm extends FormBase
         $_SESSION['mjs'] = $form_state;
 //       $url = Url::fromRoute('simpleForm.description'); // generate a url for route
 //        $url = Url::fromRoute('simpleForm.basicPageRedirect'); // generate a url for route
-        $url = Url::fromRoute('simpleForm.description'); // generate a url for route
+        $url = Url::fromRoute('simpleForm.displayTable'); // generate a url for route
 
         $form_state->setRedirectUrl($url);
     }

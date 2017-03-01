@@ -33,3 +33,12 @@ simpleForm.basicPageRedirect:
     _title: 'Basic Page Title From ReDirect'
   requirements:
     _permission: 'access content'
+
+simpleForm.displayTable:
+  path: 'mjs1138/simpleForm/displayTable'
+  defaults:
+    _controller:  '\Drupal\simpleForm\Controller\DisplayTable::description_one' # points to class::method to call
+    _title: 'mjs1138 Form API Example - Display Table'
+  requirements:
+    _permission: 'access content'
+
