@@ -144,13 +144,15 @@ class SimpleForm extends FormBase
          * with the title.
          */
         $title = $form_state->getValue('title');
-        $values = $form_state->getValue();
+        $values = $form_state->getValues();
 
         ksm($form_state); //????
         $_SESSION['mjs'] = $form_state;
 //       $url = Url::fromRoute('simpleForm.description'); // generate a url for route
 //        $url = Url::fromRoute('simpleForm.basicPageRedirect'); // generate a url for route
         $url = Url::fromRoute('simpleForm.displayTable'); // generate a url for route
+
+
 
         $form_state->setRedirectUrl($url);
     }

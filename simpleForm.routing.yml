@@ -42,3 +42,11 @@ simpleForm.displayTable:
   requirements:
     _permission: 'access content'
 
+
+simpleForm.tableTest:
+  path: 'mjs1138/simpleForm/table'
+  defaults:
+    _controller:  '\Drupal\simpleForm\Controller\Table::pager' # points to class::method to call
+    _title: 'mjs1138 Form API Example - Extra'
+  requirements:
+    _permission: 'access content'
