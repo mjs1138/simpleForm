@@ -46,7 +46,7 @@ simpleForm.displayTable:
 simpleForm.displayTable_1:
   path: 'mjs1138/simpleForm/displayTable_1'
   defaults:
-    _controller:  '\Drupal\simpleForm\Controller\DisplayTable_1::description_one' # points to class::method to call
+    _form:  '\Drupal\simpleForm\Controller\DisplayTable_1' # points to class::method to call
     _title: 'mjs1138 Form API Example - Display Table'
   requirements:
     _permission: 'access content'
