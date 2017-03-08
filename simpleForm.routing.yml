@@ -34,11 +34,11 @@ simpleForm.basicPageRedirect:
   requirements:
     _permission: 'access content'
 
-simpleForm.displayTable:
-  path: 'mjs1138/simpleForm/displayTable'
+simpleForm.displayUsersTable:
+  path: 'mjs1138/simpleForm/displayUsersTable'
   defaults:
-    _controller:  '\Drupal\simpleForm\Controller\DisplayTable::description_one' # points to class::method to call
-    _title: 'mjs1138 Form API Example - Display Table'
+    _controller:  '\Drupal\simpleForm\Controller\DisplayUsersTable::displayUsersTable' # points to class::method to call
+    _title: 'mjs1138 Form API Example - Display Users Table'
   requirements:
     _permission: 'access content'
 
@@ -46,16 +46,16 @@ simpleForm.displayTable:
 simpleForm.displayTable_1:
   path: 'mjs1138/simpleForm/displayTable_1'
   defaults:
-    _form:  '\Drupal\simpleForm\Controller\DisplayTable_1' # points to class::method to call
+    _form:  '\Drupal\simpleForm\Form\DisplayTable_1'
     _title: 'mjs1138 Form API Example - Display Table'
   requirements:
     _permission: 'access content'
 
 
-simpleForm.displayTable_2:
-  path: 'mjs1138/simpleForm/displayTable_2'
+simpleForm.displayTable:
+  path: 'mjs1138/simpleForm/displayTable'
   defaults:
-    _controller:  '\Drupal\simpleForm\Controller\DisplayTable_2::description_one' # points to class::method to call
+    _controller:  '\Drupal\simpleForm\Controller\DisplayTable::displayTable' # points to class::method to call
     _title: 'mjs1138 Form API Example - Display Table'
   requirements:
     _permission: 'access content'
@@ -65,5 +65,14 @@ simpleForm.tableTest:
   defaults:
     _controller:  '\Drupal\simpleForm\Controller\Table::pager' # points to class::method to call
     _title: 'mjs1138 Form API Example - Extra'
+  requirements:
+    _permission: 'access content'
+
+
+simpleForm.tableSelect:
+  path: 'mjs1138/simpleForm/tableSelect'
+  defaults:
+    _form:  '\Drupal\simpleForm\Form\TableSelect'
+    _title: 'mjs1138 Example - tableselect'
   requirements:
     _permission: 'access content'

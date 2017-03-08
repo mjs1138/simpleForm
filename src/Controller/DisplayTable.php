@@ -10,36 +10,25 @@ use Drupal\Core\Controller\ControllerBase;
 class DisplayTable extends ControllerBase
 {
 
-    public function description_one()
+    public function displayTable()
     {
-
-        $query = \Drupal::database()->select('users_field_data', 'u');
-        $query->fields('u', ['uid', 'name', 'mail']);
-        $results = $query->execute()->fetchAll();
-
         $header = [
-            'userid' => t('User id'),
-            'Username' => t('username'),
-            'email' => t('Email'),
+            'first_name' => $this->t('First Name'),
+            'last_name' => $this->t('Last Name'),
         ];
 
-        // Populate the rows.
-        $rows = array();
-        foreach ($results as $row) {
-            $rows[] = array('data' => array(
-                'userid' => $row->uid,     // 'userid' was the key used in the header
-                'Username' => $row->name, // 'Username' was the key used in the header
-                'email' => $row->mail,    // 'email' was the key used in the header
-            ));
-        }
+        $options = [
+            1 => ['first_name' => 'Indy', 'last_name' => 'Jones'],
+            2 => ['first_name' => 'Darth', 'last_name' => 'Vader'],
+            3 => ['first_name' => 'Super', 'last_name' => 'Man'],
+        ];
 
-        $form['table'] = [
+        $form['table'] = array(
             '#type' => 'table',
             '#header' => $header,
-            '#rows' => $rows,
-            '#empty' => t('No users found!!!'),
-        ];
-
+            '#rows' => $options,
+            '#empty' => $this->t('No users found!!!'),
+        );
 
         return $form;
     }
